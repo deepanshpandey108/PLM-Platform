@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Senior Management Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen text-gray-800 dark:bg-gray-900 dark:text-white">
+  <div class="container mx-auto p-8">
+    <h1 class="text-3xl font-bold mb-4 text-center">👩‍💼 Senior Management Dashboard</h1>
+    <p class="text-center mb-8 text-gray-600 dark:text-gray-300">
+      Access department dashboards, review performance, and share feedback with design and procurement teams.
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Design Section -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">🎨 Design Dashboard</h2>
+        <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+          View designs, ratings, and submissions from the design team.
+        </p>
+        <a href="../design/index.html" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+          Go to Design Dashboard
+        </a>
+        <form id="design-feedback-form" class="mt-4">
+          <label class="block mb-2 text-sm font-medium">Send Feedback to Design Team:</label>
+          <textarea rows="3" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" placeholder="Your feedback..." required></textarea>
+          <button type="submit" class="mt-2 bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700">Send</button>
+        </form>
+      </div>
+
+      <!-- Procurement Section -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">📦 Procurement Dashboard</h2>
+        <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+          Monitor stock, demand, and supplier availability.
+        </p>
+        <a href="../procurement/index.html" class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+          Go to Procurement Dashboard
+        </a>
+        <form id="procurement-feedback-form" class="mt-4">
+          <label class="block mb-2 text-sm font-medium">Send Feedback to Procurement Team:</label>
+          <textarea rows="3" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" placeholder="Your feedback..." required></textarea>
+          <button type="submit" class="mt-2 bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="text-center mt-10 text-sm text-gray-500 dark:text-gray-400">
+      ⓘ This dashboard is intended for senior-level access and cross-team collaboration.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

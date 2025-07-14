@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apparel PLM - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 antialiased">
+    <div id="app" class="min-h-screen flex flex-col">
+        <header class="bg-white dark:bg-gray-800/50 backdrop-blur-sm shadow-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center">
+                        <svg class="h-8 w-8 text-indigo-500" xmlns="http://www.w3.org/2000/svg" fill="none"
+                             viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                  d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L15.232 5.232z"/>
+                        </svg>
+                        <h1 class="text-xl font-semibold ml-3">Apparel PLM</h1>
+                    </div>
+                    <button id="theme-toggle" class="text-gray-500 dark:text-gray-400">🌓</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 🔔 Feedback Message -->
+        <div id="feedback-container"
+            class="hidden fixed bottom-6 left-6 max-w-sm w-full z-50">
+            <div class="bg-yellow-100 dark:bg-yellow-700 text-yellow-800 dark:text-yellow-100 p-4 rounded-lg shadow-lg border-l-4 border-yellow-500">
+                <h2 class="font-semibold text-base mb-1">📣 Feedback</h2>
+                <p id="feedback-message" class="text-sm leading-relaxed"></p>
+            </div>
+        </div>
+
+        <!-- 👕 Cards -->
+        <main class="flex-grow flex items-center justify-center p-4">
+            <div class="flex flex-col sm:flex-row gap-8">
+                <a href="upload.html" class="landing-card">
+                    <svg class="h-16 w-16 mb-4 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
+                    </svg>
+                    <h2 class="text-xl font-bold">Upload Design</h2>
+                    <p class="text-gray-500 dark:text-gray-400 mt-2">Add new DXF or image files.</p>
+                </a>
+
+                <a href="gallery.html" class="landing-card">
+                    <svg class="h-16 w-16 mb-4 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                         viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+                    </svg>
+                    <h2 class="text-xl font-bold">View Designs</h2>
+                    <p class="text-gray-500 dark:text-gray-400 mt-2">Browse and rate all uploads.</p>
+                </a>
+            </div>
+        </main>
+    </div>
+    <script src="common.js"></script>
+</body>
+</html>

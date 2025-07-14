@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demand vs Availability</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📊 Demand vs Availability</h1>
+    <p class="subtext">Compare demand and availability of products across locations</p>
+
+    <div class="filter-group">
+      <label for="product-select">Select Product:</label>
+      <select id="product-select">
+        <option value="">All Products</option>
+      </select>
+
+      <label for="location-select">Select Location:</label>
+      <select id="location-select">
+        <option value="">All Locations</option>
+      </select>
+
+      <button id="compare-btn" class="button">Compare</button>
+    </div>
+
+    <div id="comparison-results" class="comparison-section"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="demand-vs-availability.js"></script>
+</body>
+</html>
