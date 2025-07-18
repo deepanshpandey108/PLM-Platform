@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 antialiased">
+    <div id="app" class="min-h-screen flex flex-col">
+        <header class="bg-white dark:bg-gray-800/50 backdrop-blur-sm shadow-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex items-center space-x-4">
+                        <a href="index.html" class="text-indigo-500 hover:text-indigo-700">← Home</a>
+                        <h1 class="text-xl font-semibold">Upload New Design</h1>
+                    </div>
+                    <button id="theme-toggle" class="text-gray-500 dark:text-gray-400">🌓</button>
+                </div>
+            </div>
+        </header>
+
+        <main class="flex-grow flex items-center justify-center p-4">
+            <form id="upload-form" class="w-full max-w-3xl space-y-6">
+              <div id="drop-zone" class="flex flex-col items-center justify-center text-center p-12 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-lg transition-all">
+                <svg class="w-16 h-16 text-gray-400 dark:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                </svg>
+                <h3 class="mt-4 text-lg font-medium text-gray-500 dark:text-gray-400">Drag & drop files here</h3>
+                <p class="mt-1 text-sm text-gray-400 dark:text-gray-500">or</p>
+                <button type="button" id="upload-button" class="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">
+                  Select Files
+                </button>
+                <input type="file" id="file-input" multiple accept=".jpeg,.jpg,.png,.dxf" class="hidden">
+              </div>
+          
+              <!-- Metadata Fields -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <input type="text" id="fabric" placeholder="Fabric Type" class="p-2 rounded-md border dark:bg-gray-800 dark:border-gray-700" required>
+                <input type="number" id="cost" placeholder="Cost (₹)" class="p-2 rounded-md border dark:bg-gray-800 dark:border-gray-700" required>
+                <select id="availability" class="p-2 rounded-md border dark:bg-gray-800 dark:border-gray-700" required>
+                  <option value="">Availability</option>
+                  <option value="In Stock">In Stock</option>
+                  <option value="Out of Stock">Out of Stock</option>
+                  <option value="Limited Edition">Limited Edition</option>
+                </select>
+              </div>
+          
+              <div class="flex justify-end">
+                <button type="submit" class="px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-md shadow">Upload</button>
+              </div>
+            </form>
+          </main>
+          
+    </div>
+    <script src="common.js"></script>
+    <script src="upload.js"></script>
+</body>
+</html>

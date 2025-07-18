@@ -1,0 +1,11 @@
+product id,name,fabric type,cost,availability,location
+P001,Cotton Kurti,Cotton,500,2500,Bangalore
+P002,Silk Saree,Silk,1200,122,Ahmedabad
+P003,Denim Jacket,Denim,1500,1230,Delhi
+P004,Linen Shirt,Linen,800,1128,Mumbai
+P005,Polyester T-Shirt,Polyester,300,30,Bangalore
+P006,Cotton Saree,Cotton,950,0,Ahmedabad
+P007,Silk Kurti,Silk,1100,15,Delhi
+P008,Linen Kurta,Linen,900,22,Mumbai
+P009,Denim Jeans,Denim,1400,20,Bangalore
+P010,Polyester Shorts,Polyester,350,0,Delhi

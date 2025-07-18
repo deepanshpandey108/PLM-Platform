@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Senior Management Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyD5uOzohd3UmXI5nSUtgPWMSMBEWOjEHfs",
+      authDomain: "plm-platform.firebaseapp.com",
+      projectId: "plm-platform",
+      storageBucket: "plm-platform.firebasestorage.app",
+      messagingSenderId: "1009895587150",
+      appId: "1:1009895587150:web:d68d28c47fbd5de4ca321f",
+      measurementId: "G-R8E7QSFPGN"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (!user) {
+        console.warn('No user logged in, redirecting to login...');
+        window.location.href = '../auth/login.html';
+      } else {
+        console.log('Authenticated as:', user.email);
+      }
+    });
+
+    function logout() {
+      firebase.auth().signOut().then(() => {
+        window.location.href = '../auth/login.html';
+      });
+    }
+  </script>
+</head>
+<body class="bg-gray-100 min-h-screen text-gray-800 dark:bg-gray-900 dark:text-white">
+  <div class="container mx-auto p-8">
+    <div class="flex justify-between items-center mb-6"> <br>
+      <h1 class="text-3xl font-bold text-center flex-1">Senior Management Dashboard</h1>
+      <button onclick="logout()" class="ml-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Logout</button>
+    </div>
+
+    <p class="text-center mb-8 text-gray-600 dark:text-gray-300">
+      <br>
+      Access department dashboards, review performance, and share feedback with design and procurement teams. <br>Manage all the dashboards from here, visit them, track progress, provide your valuable insights. This is meant to be accessed only by the senior management of the company and people with access to this have a master access to all the other dashboards
+    </p>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Design Section -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">Design Dashboard</h2>
+        <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+          View designs, ratings, and submissions from the design team.
+        </p>
+        <a href="../design/index.html" class="inline-block bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+          Go to Design Dashboard
+        </a>
+        <form id="design-feedback-form" class="mt-4">
+          <label class="block mb-2 text-sm font-medium">Send Feedback to Design Team:</label>
+          <textarea rows="3" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" placeholder="Your feedback..." required></textarea>
+          <button type="submit" class="mt-2 bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700">Send</button>
+        </form>
+      </div>
+
+      <!-- Procurement Section -->
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow hover:shadow-xl transition">
+        <h2 class="text-xl font-semibold mb-2">Procurement Dashboard</h2>
+        <p class="mb-4 text-sm text-gray-600 dark:text-gray-400">
+          Monitor stock, demand, and supplier availability.
+        </p>
+        <a href="../procurement/index.html" class="inline-block bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+          Go to Procurement Dashboard
+        </a>
+        <form id="procurement-feedback-form" class="mt-4">
+          <label class="block mb-2 text-sm font-medium">Send Feedback to Procurement Team:</label>
+          <textarea rows="3" class="w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600" placeholder="Your feedback..." required></textarea>
+          <button type="submit" class="mt-2 bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="text-center mt-10 text-sm text-gray-500 dark:text-gray-400">
+      ⓘ This dashboard is intended for senior-level access and cross-team collaboration.
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <title>Procurement Dashboards</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyD5uOzohd3UmXI5nSUtgPWMSMBEWOjEHfs",
+      authDomain: "plm-platform.firebaseapp.com",
+      projectId: "plm-platform",
+      storageBucket: "plm-platform.firebasestorage.app",
+      messagingSenderId: "1009895587150",
+      appId: "1:1009895587150:web:d68d28c47fbd5de4ca321f",
+      measurementId: "G-R8E7QSFPGN"
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (!user) {
+        console.warn('No user logged in. Redirecting...');
+        window.location.href = '../auth/login.html';
+      } else {
+        console.log('Authenticated as:', user.email);
+      }
+    });
+
+    function logout() {
+      firebase.auth().signOut().then(() => {
+        window.location.href = '../auth/login.html';
+      });
+    }
+  </script>
+</head>
+<body class="bg-gray-100 min-h-screen text-gray-800 dark:bg-gray-900 dark:text-white">
+  <div class="container mx-auto p-6">
+    <div class="flex justify-between items-center mb-6">
+      <h1 class="text-3xl font-bold">🧾 Procurement Dashboards</h1>
+      <button onclick="logout()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Logout</button>
+    </div>
+
+    <p class="mb-6 text-gray-600 dark:text-gray-300">Choose a dashboard to explore procurement data, analyze demand and stock, and make informed decisions.</p>
+
+    <div class="links space-y-3">
+      <a href="available.html" class="button bg-blue-500 text-white px-4 py-2 rounded block">Available Stock Dashboard</a>
+      <a href="demand.html" class="button bg-green-500 text-white px-4 py-2 rounded block">Demand Dashboard</a>
+      <a href="demand-vs-availability.html" class="button bg-purple-500 text-white px-4 py-2 rounded block">Demand vs Availability</a>
+    </div>
+  </div>
+
+  <!-- 🔔 Feedback Message Box -->
+  <div id="feedback-container" class="hidden fixed bottom-6 left-6 max-w-sm w-full z-50">
+    <div class="bg-yellow-100 dark:bg-yellow-700 text-yellow-800 dark:text-yellow-100 p-4 rounded-lg shadow-lg border-l-4 border-yellow-500">
+      <h2 class="font-semibold text-base mb-1">📣 Feedback</h2>
+      <p id="feedback-message" class="text-sm leading-relaxed"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

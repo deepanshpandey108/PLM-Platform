@@ -1,0 +1,11 @@
+product id,name,demand,location
+P001,Cotton Kurti,180,Bangalore
+P002,Silk Saree,150,Ahmedabad
+P003,Denim Jacket,220,Delhi
+P004,Linen Shirt,90,Mumbai
+P005,Polyester T-Shirt,160,Bangalore
+P006,Cotton Saree,110,Ahmedabad
+P007,Silk Kurti,140,Delhi
+P008,Linen Kurta,95,Mumbai
+P009,Denim Jeans,200,Bangalore
+P010,Polyester Shorts,100,Delhi

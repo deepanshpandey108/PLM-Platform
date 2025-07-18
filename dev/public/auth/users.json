@@ -1,0 +1,18 @@
+[
+    {
+      "username": "admin",
+      "password": "admin123",
+      "role": "management"
+    },
+    {
+      "username": "design",
+      "password": "design123",
+      "role": "design"
+    },
+    {
+      "username": "procure",
+      "password": "procure123",
+      "role": "procurement"
+    }
+  ]
+  
